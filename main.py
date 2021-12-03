@@ -23,12 +23,11 @@ playable_area = (20, 10)
 inventory = [
     ["", ""],
     ["Health", 15, 15],
-    ["Current item", "Hand"],
-    ["Items", []],
+    ["Items", ["Boat"]],
     ["XP", 0],
     ["Level", 0]
 ]
-monsters = [Monster("Ϡ", 4, 4, True, True, 9, 5)]
+monsters = [Monster("Ϡ", 3, 4, True, True, 9, 5)]
 monsters_on_map = []
 
 with open("current_chapter.sav") as f:

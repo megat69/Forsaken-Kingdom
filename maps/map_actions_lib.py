@@ -16,7 +16,7 @@ def text_display(text, slowness_multiplier:float=1, display_game_tiles:bool=True
                           [kwargs["playable_area"][0] - text[:i+1].count("\n"), kwargs["playable_area"][1]], 
                           kwargs["player_pos"], kwargs["chars"], " ", 0,
                           kwargs["pos_of_chars"], kwargs["monsters"], kwargs["monsters_on_map"])
-            print(text[:i+1].replace("¶", ""), Style.RESET_ALL, sep="")
+            print(Style.RESET_ALL, text[:i+1].replace("¶", ""), Style.RESET_ALL, sep="")
         sleep((0.05 if text[i] != "\n" else 0.2) * slowness_multiplier)
     if do_getch: getch()
     

@@ -37,8 +37,8 @@ def action3(**kwargs):
         blend_background(kwargs["player_pos"], kwargs["playable_area"], kwargs["TILES"], kwargs["chars"])
             
     # Forsaken kingdom
-    text_display(f"{Style.BRIGHT}{Fore.YELLOW}{Back.YELLOW}F O R S A K E N    K I N G D O M{Back.RESET}{Style.RESET_ALL}\n\n"
-                 f"{Fore.YELLOW}After the sudden death of the king of this land a few years ago, evil took the throne.\n"
+    text_display(f"{Style.BRIGHT}{Fore.YELLOW}{Back.YELLOW}F O R S A K E N    K I N G D O M{Back.RESET}{Style.RESET_ALL}".center(86) +
+                 f"\n\n{Fore.YELLOW}After the sudden death of the king of this land a few years ago, evil took the throne.\n"
                  "\n"
                  "Monsters started to emerge, out of nowhere.\n"
                  "Citizens have to hide, fight... Or die.\n\n"
@@ -54,7 +54,10 @@ def action3(**kwargs):
     sys.exit(0)
         
 def action4(default=True, **kwargs):
-    text_display(f"I cannot cross the river{' there !' if default is True else ' ! ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶Yet...'}", 1.25, **kwargs)
+    text_display(f"I cannot cross the river{' there !' if default is True else ' ! ¶¶¶¶¶¶¶¶¶Yet...'}", 1.25, **kwargs)
+
+def action5(**kwargs):
+    text_display("Already looking for easter eggs, in the first level of the game ?! ¶¶¶¶Wow.", **kwargs)
 
 
-actions = [action1, action2, action3, action4]
+actions = [action1, action2, action3, action4, action5]
