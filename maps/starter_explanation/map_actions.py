@@ -16,7 +16,7 @@ def action1(**kwargs):
                          "survived the return of the Tyrant.\n"
                          "\nYou need to save this kingdom, and therefore, we have to teach you how to fight.", **kwargs)
             text_display("Take this sword.", **kwargs)
-        if not "Sword 🗡️" in kwargs["inventory"][kwargs["inventory_keys"].index("Items")][1]:
+        if not "Sword (Atk +3)" in kwargs["inventory"][kwargs["inventory_keys"].index("Items")][1]:
             kwargs["inventory"][kwargs["inventory_keys"].index("Items")][1].append("Sword (Atk +3)")
         if _DEBUG is False:
             text_display(f"You  received  a  {Fore.YELLOW}SWORD{Fore.RESET}  !", 3, **kwargs)

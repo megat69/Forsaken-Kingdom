@@ -43,7 +43,7 @@ def action3(**kwargs):
                  "Monsters started to emerge, out of nowhere.\n"
                  "Citizens have to hide, fight... Or die.\n\n"
                  "But this reign has to end. And this is where YOU come into place !\n"
-                 f"To destroy the Tyrant !{Fore.RESET}", display_game_tiles=False, **kwargs)
+                 f"To destroy the Tyrant !{Fore.RESET}", display_game_tiles=False, play_sound=False, **kwargs)
     
     # Changes chapter
     with open("current_chapter.sav", "r") as f:

@@ -12,6 +12,7 @@ import json
 import time
 import colorama; colorama.init()
 from colorama import Fore
+#from playsound import playsound
 
 # Available chars, by lighting
 chars = "▓▒░҈ ŦÝԬ"
@@ -27,6 +28,7 @@ inventory = [
     ["XP", 0],
     ["Level", 0]
 ]
+inventory_keys = [item[0] for item in inventory]
 monsters = [Monster("Ϡ", 3, 4, True, True, 9, 5)]
 monsters_on_map = []
 
@@ -87,11 +89,15 @@ while running:
     # If the player collides with a monster, we start the fight
     if (player_pos[0], player_pos[1]) in tuple(tuple(monster.position) for monster in monsters_on_map):
         start_fight(tuple(monster for monster in monsters_on_map if tuple(monster.position) == (player_pos[0], player_pos[1]))[0],
-                    inventory, [item[0] for item in inventory], player_pos, playable_area, TILES, chars, pos_of_chars, monsters, monsters_on_map)
+                    inventory, inventory_keys, player_pos, playable_area, TILES, chars, pos_of_chars, monsters, monsters_on_map)
 
     # Moving player if speed of tile in front is different from -1
     if TILES[player_pos[0]][player_pos[1]].speed == -1:
         player_pos = old_player_pos.copy()
+
+    """# If player moved, we play a sound
+    if player_pos != old_player_pos:
+        playsound(f"assets/sounds/footstep{randint(1, 5)}.wav", block=False)"""
 
     # Checking if the player is using the action key
     if user_input == "f":
@@ -112,7 +118,7 @@ while running:
                 # We execute the action function linked to it.
                 actions[TILES[player_pos[0] + relative_tile_position[0]][player_pos[1] + relative_tile_position[1]].action - 1](
                     TILES=TILES, player_direction=player_direction, player_pos=player_pos, playable_area=playable_area, chars=chars,
-                    player_icons=player_icons, pos_of_chars=pos_of_chars, inventory=inventory, inventory_keys=[item[0] for item in inventory],
+                    player_icons=player_icons, pos_of_chars=pos_of_chars, inventory=inventory, inventory_keys=inventory_keys,
                     monsters=monsters, monsters_on_map=monsters_on_map
                 )
         except IndexError:
@@ -120,9 +126,9 @@ while running:
             pass
     
     # Calculating level
-    if inventory[[item[0] for item in inventory].index("XP")][1] >= 20 + inventory[[item[0] for item in inventory].index("Level")][1] * 2:
-        inventory[[item[0] for item in inventory].index("Level")][1] += 1
-        inventory[[item[0] for item in inventory].index("WP")][1] = 0
+    if inventory[inventory_keys.index("XP")][1] >= 20 + inventory[inventory_keys.index("Level")][1] * 2:
+        inventory[inventory_keys.index("Level")][1] += 1
+        inventory[inventory_keys.index("XP")][1] = 0
         
     # Remembering played time
     last_frame_executed = time.time()

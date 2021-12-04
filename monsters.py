@@ -83,7 +83,7 @@ def start_fight(monster, inventory, inventory_keys, player_pos, playable_area, T
             print(f"Regenerated {regen} HP")
         # Trying to run, one chance out of 3
         elif user_input == "r":
-            if randint(0,2) == 0: 
+            if randint(0, 2) == 0:
                 print("You run away.")
                 sleep(2)
                 return None
@@ -106,4 +106,6 @@ def start_fight(monster, inventory, inventory_keys, player_pos, playable_area, T
         if inventory[inventory_keys.index("Health")][1] <= 0:
             print("You got killed.")
             sys.exit(0)
+
+    blend_background(player_pos, playable_area, TILES, chars, 0.5, invert=True)
     
