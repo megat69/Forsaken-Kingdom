@@ -47,6 +47,16 @@ actions = getattr(import_module(f"maps.{current_chapter[0]}.map_actions"), "acti
 # Setting framerate cap vars
 last_frame_executed = 0
 
+# Printing console size message
+print("\n"*20)
+for i in range(playable_area[0]):
+    if i == playable_area[0] // 2:
+        print("|   Please adjust your console size so that all these lines fit, and only these lines")
+    else:
+        print("|")
+getch()
+
+
 # Game loop
 running = True
 while running:
