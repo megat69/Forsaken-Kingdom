@@ -6,7 +6,7 @@ import sys
 from colorama import Fore
 
 was_monster_spawned = False
-_DEBUG = True
+_DEBUG = False
 
 def action1(**kwargs):
     global was_monster_spawned
