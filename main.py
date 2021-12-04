@@ -23,7 +23,7 @@ playable_area = (20, 10)
 inventory = [
     ["", ""],
     ["Health", 15, 15],
-    ["Items", ["Boat"]],
+    ["Items", []],
     ["XP", 0],
     ["Level", 0]
 ]
