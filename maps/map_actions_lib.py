@@ -6,11 +6,12 @@ from colorama import Back, Fore, Style
 
 def text_display(text, slowness_multiplier:float=1, display_game_tiles:bool=True, do_getch:bool=True, **kwargs):
     for i in range(len(text)):
+        # Checking if the character is not a skip or a formatting character
         if text[i] != "¶":
             if display_game_tiles: display_tiles(kwargs["TILES"], 
                           [kwargs["playable_area"][0] - text[:i+1].count("\n"), kwargs["playable_area"][1]], 
                           kwargs["player_pos"], kwargs["chars"], kwargs["player_icons"], kwargs["player_direction"],
-                          kwargs["pos_of_chars"], kwargs["monsters"], kwargs["monsters_on_map"])
+                          kwargs["pos_of_chars"], kwargs["monsters"], kwargs["monsters_on_map"], kwargs["inventory"])
             else:
                 display_tiles([[Tile(4, 2, 0, Back.RESET) for x in range(len(kwargs["TILES"][0]))] for y in range(len(kwargs["TILES"]))], 
                           [kwargs["playable_area"][0] - text[:i+1].count("\n"), kwargs["playable_area"][1]], 

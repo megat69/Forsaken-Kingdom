@@ -29,7 +29,7 @@ def start_fight(monster, inventory, inventory_keys, player_pos, playable_area, T
     
     # We display the two players
     header_text = "       YOU" + "\t"*6 + "ENEMY\n\n"
-    player_text = ['______ ', '| ___ | ', '|_/ /', '|  __/ ', '| |    ', '\\_|   ']
+    player_text = ['______ ', '| ___ | ', '|_/ /', '|  __/ ', '| |    ', r'\\_|   ']
     text = "\n".join(player_line + "\t"*5 + monster.monster.monster_char*len(player_line) for player_line in player_text)
     
     # We display the text we generated
@@ -42,6 +42,7 @@ def start_fight(monster, inventory, inventory_keys, player_pos, playable_area, T
         # Slowly replacing header with HP
         header_text = ("HP: " + str(inventory[inventory_keys.index("Health")][1]), "HP: " + str(monster.hp))
         for i in range(max(len(header_text[0]), len(header_text[1])) + 1):
+            print("\n"*(playable_area[0] - len(player_text) - 3))
             print("       " + header_text[0][:i] + "-"*len(header_text[0][i:]) + "\t"*5 + \
                   header_text[1][:i] + "-"*len(header_text[1][i:]))
             print("\n" + text)
@@ -65,8 +66,8 @@ def start_fight(monster, inventory, inventory_keys, player_pos, playable_area, T
         atk_damage = randint(atk_damage - 2, atk_damage + 1)
         # Fighting if wanted
         if user_input == "f":
+            print(f"\nDealt {min(atk_damage, monster.hp)} damage to monster")
             monster.hp -= atk_damage
-            print(f"\nDealt {atk_damage} damage to monster")
         
             if monster.hp <= 0:
                 print("\nYou got him !")

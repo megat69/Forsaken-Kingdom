@@ -3,9 +3,10 @@ from time import sleep
 from getch import getch
 from monsters import MapMonster
 import sys
+from colorama import Fore
 
 was_monster_spawned = False
-_DEBUG = False
+_DEBUG = True
 
 def action1(**kwargs):
     global was_monster_spawned
@@ -18,7 +19,7 @@ def action1(**kwargs):
         if not "Sword 🗡️" in kwargs["inventory"][kwargs["inventory_keys"].index("Items")][1]:
             kwargs["inventory"][kwargs["inventory_keys"].index("Items")][1].append("Sword (Atk +3)")
         if _DEBUG is False:
-            text_display("You  received  a  SWORD  !", 3, **kwargs)
+            text_display(f"You  received  a  {Fore.YELLOW}SWORD{Fore.RESET}  !", 3, **kwargs)
             text_display("Now, fight this monster, and then go to talk to us again !", **kwargs)
         kwargs["monsters_on_map"].append(MapMonster(kwargs["monsters"][0], [16, 9], 10, True))
         was_monster_spawned = True
