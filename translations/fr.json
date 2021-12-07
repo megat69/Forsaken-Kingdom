@@ -1,0 +1,44 @@
+{
+  "main": {
+    "console_size": "Veuillez ajuster la taille de votre console pour que toutes les lignes rentrent, et uniquement ces lignes",
+    "save_files_not_found": "Les fichiers de sauvegarde n'ont pas pu être trouvés.",
+    "unexisting_chapter": "Ce chapitre n'a pas l'air d'exister...",
+    "quit_msg": "Voulez-vous vraiment quitter",
+    "relaunch_to_access_new_chapter": "Relancez le programme pour accéder au prochain chapitre.",
+    "inventory": {
+      "health": "PV",
+      "items": "Inventaire",
+      "XP": "XP",
+      "level": "Niveau"
+    }
+  },
+  "monsters": {
+    "playernames": ["VOUS", "ENNEMI"],
+    "options": "Que faites vous ?\nCombattre (f), Se soigner (h), ou S'enfuir (r)",
+    "dealt_dmg": "\nVous avez infligé {} dégâts au monstre",
+    "got_him": "\nVous l'avez eu !",
+    "regened_HP": "{} PV régénérés",
+    "ran_away": ["Vous vous êtes enfuis.", "Vous n'avez pas pu vous enfuir"],
+    "dmg_received": "\nL'ennemi vous a infligé {} dégâts.",
+    "got_killed": "Vous avez été tué."
+  },
+  "awakening_map": {
+    "welcome_sign": "Bienvenue dans mon RPG !\nIl est plutôt restreint, mais ce n'est que le début...",
+    "action3": {
+      "hi": "Bonjour, jeune personne !",
+      "follow": "Suivez-moi.",
+      "intro": "Après la mort soudaine du roi de cette terre il y a quelques années, la mal s'est emparé du trône.\n\nDes monstres ont commencé à émerger, sortant de nulle part.\nLes habitants durent se cacher, se battre... Ou mourir.\n\nMais ce règne va toucher à sa fin. Et ce, uniquement grâce à VOUS !\nVous, qui allez détrôner le Tyran !"
+    },
+    "action4": ["Je ne peux pas traverser la rivière", "à cet endroit", "Pour le moment"],
+    "action5": "Déjà en recherche d'easter eggs, dans le premier niveau du jeu ?! ¶¶¶¶Wow."
+  },
+  "starter_explanation": {
+    "sages_intro": "Bienvenue, jeune personne.\nNous sommes les 4 sages qui ont survécu au retour du Tyran\n\nVous devez sauver ce royaume, et pour celà, nous devons vous apprendre à vous battre.",
+    "take_sword": "Prenez cette épée.",
+    "received": "Vous  avez  reçu  une  ",
+    "fight_monster": "Maintenant, combattez ce monstre, puis revenez nous parler !",
+    "congrats": "Bravo, maintenant, vous savez vous battre !",
+    "sages_healing": "laissez nous vous soigner.",
+    "fully_healed": "Vous êtes complètement soigné.\n\nAllons-y, suivez-nous."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "main": {
+    "console_size": "Please adjust your console size so that all these lines fit, and only these lines",
+    "save_files_not_found": "The save files weren't found.",
+    "unexisting_chapter": "This chapter doesn't seem to exist...",
+    "quit_msg": "Do you really want to quit",
+    "relaunch_to_access_new_chapter": "Relaunch program to access new chapter.",
+    "inventory": {
+      "health": "Health",
+      "items": "Items",
+      "XP": "XP",
+      "level": "Level"
+    }
+  },
+  "monsters": {
+    "playernames": ["YOU", "ENEMY"],
+    "options": "What do you do ?\nFight (f), Heal (h), or Run (r)",
+    "dealt_dmg": "\nDealt {} damage to monster",
+    "got_him": "\nYou got him !",
+    "regened_HP": "Regenerated {} HP",
+    "ran_away": ["You ran away.", "You weren't able to escape"],
+    "dmg_received": "\nEnemy dealt {} damage.",
+    "got_killed": "You got killed."
+  },
+  "awakening_map": {
+    "welcome_sign": "Welcome to my RPG !\nIt is pretty restrained, but it's only the beginning...",
+    "action3": {
+      "hi": "Hi, young person !",
+      "follow": "Follow me.",
+      "intro": "After the sudden death of the king of this land a few years ago, evil took the throne.\n\nMonsters started to emerge, out of nowhere.\nCitizens have to hide, fight... Or die.\n\nBut this reign has to end. And this is where YOU come into place !\nTo destroy the Tyrant !"
+    },
+    "action4": ["I cannot cross the river", "there", "Yet"],
+    "action5": "Already looking for easter eggs, in the first level of the game ?! ¶¶¶¶Wow."
+  },
+  "starter_explanation": {
+    "sages_intro": "Welcome, young person.\nWe are the 4 sages who survived the return of the Tyrant.\n\nYou need to save this kingdom, and therefore, we have to teach you how to fight.",
+    "take_sword": "Take this sword.",
+    "received": "You  received  a  ",
+    "fight_monster": "Now, fight this monster, and then go to talk to us again !",
+    "congrats": "Congratulations, now, you know how to fight !",
+    "sages_healing": "Let us heal you.",
+    "fully_healed": "You are now fully healed.\n\nLet's go, follow us."
+  }
+}
