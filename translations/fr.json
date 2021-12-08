@@ -6,11 +6,14 @@
     "quit_msg": "Voulez-vous vraiment quitter",
     "relaunch_to_access_new_chapter": "Relancez le programme pour accéder au prochain chapitre.",
     "inventory": {
-      "health": "PV",
+      "health": "Santé",
+      "health_shortened": "PV",
       "items": "Inventaire",
       "XP": "XP",
       "level": "Niveau"
-    }
+    },
+    "movement": "Mouvement",
+    "interact": "Interagir"
   },
   "monsters": {
     "playernames": ["VOUS", "ENNEMI"],

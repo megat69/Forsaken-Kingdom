@@ -7,10 +7,13 @@
     "relaunch_to_access_new_chapter": "Relaunch program to access new chapter.",
     "inventory": {
       "health": "Health",
+      "health_shortened": "HP",
       "items": "Items",
       "XP": "XP",
       "level": "Level"
-    }
+    },
+    "movement": "Movement",
+    "interact": "Interact"
   },
   "monsters": {
     "playernames": ["YOU", "ENEMY"],

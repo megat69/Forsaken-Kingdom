@@ -40,7 +40,7 @@ def start_fight(monster, inventory, inventory_keys, player_pos, playable_area, T
     # Looping until one of the two participants gets to 0 HP
     while inventory[inventory_keys.index(translations["main"]["inventory"]["health"])][1] > 0 and monster.hp > 0:
         # Slowly replacing header with HP
-        header_text = (translations["main"]["inventory"]["health"] + ": " + str(inventory[inventory_keys.index(translations["main"]["inventory"]["health"])][1]), translations["main"]["inventory"]["health"] + ": " + str(monster.hp))
+        header_text = (translations["main"]["inventory"]["health_shortened"] + ": " + str(inventory[inventory_keys.index(translations["main"]["inventory"]["health"])][1]), translations["main"]["inventory"]["health_shortened"] + ": " + str(monster.hp))
         for i in range(max(len(header_text[0]), len(header_text[1])) + 1):
             print("\n"*(playable_area[0] - len(player_text) - 3))
             print("       " + header_text[0][:i] + "-"*len(header_text[0][i:]) + "\t"*5 + \

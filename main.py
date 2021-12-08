@@ -11,7 +11,7 @@ from importlib import import_module
 import json
 import time
 import colorama; colorama.init()
-from colorama import Fore
+from colorama import Fore, Back, Style
 import sys
 #from playsound import playsound
 
@@ -79,7 +79,7 @@ while running:
     if time.time() - last_frame_executed < 1/15: continue
 
     # Tiles displaying
-    display_tiles(TILES, playable_area, player_pos, chars, player_icons, player_direction, pos_of_chars, monsters, monsters_on_map, inventory)
+    display_tiles(TILES, playable_area, player_pos, chars, player_icons, player_direction, monsters, monsters_on_map, inventory)
         
     user_input = getch()
     
@@ -92,16 +92,16 @@ while running:
     
     # Player movement
     old_player_pos = player_pos.copy()
-    if user_input == "z":
+    if user_input == options["controls"][0]:
         player_pos[0] -= 1
         player_direction = 1
-    elif user_input == "s": 
+    elif user_input == options["controls"][2]:
         player_pos[0] += 1
         player_direction = 2
-    elif user_input == "q":
+    elif user_input == options["controls"][1]:
         player_pos[1] -= 1
         player_direction = 0
-    elif user_input == "d":
+    elif user_input == options["controls"][3]:
         player_pos[1] += 1
         player_direction = 3
         
@@ -125,7 +125,7 @@ while running:
         playsound(f"assets/sounds/footstep{randint(1, 5)}.wav", block=False)"""
 
     # Checking if the player is using the action key
-    if user_input == "f":
+    if user_input == options["controls"][4]:
         # If the player is doing an action, we check the tile in front of it for the action.
         # Beforehand, we create a position list for the direction, so we know later which tile the player is
         # interacting with.
@@ -149,6 +149,19 @@ while running:
         except IndexError:
             # If any error from tile number occurs, we just skip it
             pass
+
+    elif user_input == "c":
+        if not "controls_text_indicator" in globals():
+            controls_text_indicator = translations["main"]["movement"] + " :\n"
+            controls_text_indicator += f"      ____ \n     ||{options['controls'][0].upper()} ||\n     ||__||\n     |/__\|\n" \
+                    f" ____ ____ ____\n||{options['controls'][1].upper()} |||{options['controls'][2].upper()}" \
+                    f" |||{options['controls'][3].upper()} ||\n" \
+                    "||__|||__|||__||\n|/__\|/__\|/__\|"
+            controls_text_indicator += "\n"*3 + translations["main"]["interact"] + " :\n"
+            controls_text_indicator += f" ____ \n||{options['controls'][4].upper()} ||\n||__||\n|/__\|"
+
+        print("\n" * max(playable_area[0] - len(controls_text_indicator.split("\n")) - 2, 0), controls_text_indicator, "\n"*2, sep="")
+        getch()
     
     # Calculating level
     if inventory[inventory_keys.index(translations["main"]["inventory"]["XP"])][1] >= \

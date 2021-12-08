@@ -28,7 +28,7 @@ def action3(**kwargs):
         display_tiles(
             kwargs["TILES"], kwargs["playable_area"], 
             [kwargs["player_pos"][0] - i, kwargs["player_pos"][1]], kwargs["chars"], 
-            kwargs["player_icons"], 1, kwargs["pos_of_chars"], kwargs["monsters"], kwargs["monsters_on_map"]
+            kwargs["player_icons"], 1, kwargs["monsters"], kwargs["monsters_on_map"]
         )
         sleep(0.5)
     else:
