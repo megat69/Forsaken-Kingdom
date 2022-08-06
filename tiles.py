@@ -11,7 +11,7 @@ class Tile:
 		self.color_int = color_int
 		self.pos_of_char = pos_of_char  # The position of the character (0 is full tile, 1 is left, 2 middle, and 3 right)
 
-def display_tiles(TILES, playable_area, player_pos, chars, player_icons, player_direction, monsters, monsters_on_map, inventory=(("", ""),), colors_enabled=True):
+def display_tiles(TILES, playable_area, player_pos, chars, player_icons, player_direction, monsters, monsters_on_map, inventory=(("", ""),), colors_enabled=True, no_print:bool=False):
 	"""
 	Displays the tiles of the game.
 	"""
@@ -151,4 +151,7 @@ def display_tiles(TILES, playable_area, player_pos, chars, player_icons, player_
 		finally:
 			counter += 1
 
-	print(final_str)
+	if no_print is False:
+		print(final_str)
+	else:
+		return final_str
