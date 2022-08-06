@@ -39,7 +39,7 @@ def blend_background(player_pos, playable_area, TILES, chars, slowness_multiplie
 		for y1 in range(max(0, player_pos[1] - (playable_area[1] // 2)),
 		                min(len(TILES[0]), playable_area[1] // 2 + player_pos[1])):
 			scene = deepcopy(TILES)
-			if invert is False:
+			if invert:
 				scene = [[scene[i][j] if j < y1 else empty_tile for j in range(len(scene[i]))] if i < x1 else [empty_tile for _ in range(len(scene[0]))] for i in range(len(scene))]
 			else:
 				scene = [[scene[i][j] if j > y1 else empty_tile for j in range(len(scene[i]))] if i > x1 else [empty_tile for _ in range(len(scene[0]))] for i in range(len(scene))]
