@@ -72,7 +72,7 @@ def display_tiles(TILES, playable_area, player_pos, chars, player_icons, player_
 			elif x != player_pos[0] or y != player_pos[1]:
 				# If this is a regular tile, we display it 3 times
 				if TILES[x][y].pos_of_char == 0:
-					final_str += TILES[x][y].color + chars[TILES[x][y].char_pos] * 3 + Back.RESET + Back.RESET
+					final_str += TILES[x][y].color + chars[TILES[x][y].char_pos] * 3 + Back.RESET
 				# otherwise, we work out where to place it
 				elif TILES[x][y].pos_of_char == 1:
 					try:
